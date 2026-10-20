@@ -14,6 +14,8 @@ export type AlquilerLocal = {
   dueDate: string | null;
   daysUntilDue: number | null;
   status: AlquilerLocalStatus;
+  contractEndDate: string | null;
+  daysUntilContractEnd: number | null;
 };
 
 export type AlquilerPayment = {
@@ -35,4 +37,5 @@ export type UpdateAlquilerLocalInput = Partial<{
   paymentDay: number;
   rentAmount: number;
   note: string;
+  contractEndDate: string;
 }>;

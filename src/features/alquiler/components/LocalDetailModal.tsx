@@ -19,6 +19,7 @@ export function LocalDetailModal({
   const [paymentDay, setPaymentDay] = useState(local.paymentDay ? String(local.paymentDay) : "");
   const [rentAmount, setRentAmount] = useState(local.rentAmount !== null ? String(local.rentAmount) : "");
   const [note, setNote] = useState(local.note ?? "");
+  const [contractEndDate, setContractEndDate] = useState(local.contractEndDate ?? "");
   const [saving, setSaving] = useState(false);
   const [markingPaid, setMarkingPaid] = useState(false);
   const [error, setError] = useState("");
@@ -34,7 +35,8 @@ export function LocalDetailModal({
         phone: phone.trim(),
         paymentDay: paymentDay ? Number(paymentDay) : undefined,
         rentAmount: rentAmount ? Number(rentAmount) : undefined,
-        note: note.trim()
+        note: note.trim(),
+        contractEndDate: contractEndDate.trim()
       });
       onSaved(saved);
     } catch (err) {
@@ -117,6 +119,10 @@ export function LocalDetailModal({
               </label>
             </div>
             <label className="field">
+              <span>Fin de contrato (opcional)</span>
+              <input type="date" value={contractEndDate} onChange={(event) => setContractEndDate(event.target.value)} />
+            </label>
+            <label className="field">
               <span>Nota (opcional)</span>
               <textarea value={note} onChange={(event) => setNote(event.target.value)} maxLength={500} rows={2} />
             </label>
@@ -125,6 +131,12 @@ export function LocalDetailModal({
               <p className="local-detail-due">
                 Próximo vencimiento: <strong>{formatDate(local.dueDate)}</strong>
                 {local.rentAmount !== null && <> · {formatMoney(local.rentAmount)}</>}
+              </p>
+            )}
+            {local.contractEndDate && local.daysUntilContractEnd !== null && (
+              <p className="local-detail-due">
+                Fin de contrato: <strong>{formatDate(local.contractEndDate)}</strong>
+                {local.daysUntilContractEnd >= 0 ? ` (en ${local.daysUntilContractEnd} días)` : ` (vencido hace ${-local.daysUntilContractEnd} días)`}
               </p>
             )}
           </>

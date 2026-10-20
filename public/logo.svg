@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#2a2724" />
+  <!-- Fachada de la casa con los 10 mini locales (grilla 2x5), el concepto del proyecto. -->
+  <path d="M20 58 L64 26 L108 58 V100 H20 Z" fill="#3a3530" />
+  <rect x="30" y="64" width="68" height="30" rx="3" fill="#b45309" />
+  <g fill="#fdebd3">
+    <rect x="34" y="68" width="10" height="10" rx="1.5" />
+    <rect x="48" y="68" width="10" height="10" rx="1.5" />
+    <rect x="62" y="68" width="10" height="10" rx="1.5" />
+    <rect x="76" y="68" width="10" height="10" rx="1.5" />
+    <rect x="90" y="68" width="4" height="10" rx="1.5" />
+    <rect x="34" y="82" width="10" height="8" rx="1.5" />
+    <rect x="48" y="82" width="10" height="8" rx="1.5" />
+    <rect x="62" y="82" width="10" height="8" rx="1.5" />
+    <rect x="76" y="82" width="10" height="8" rx="1.5" />
+    <rect x="90" y="82" width="4" height="8" rx="1.5" />
+  </g>
+</svg>

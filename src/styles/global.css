@@ -208,6 +208,24 @@ button {
   color: var(--color-muted);
 }
 
+/* Aviso de fin de contrato -- aparte del color de fondo de la tarjeta
+   (que es del pago mensual), asi que necesita contraste propio para
+   notarse tanto sobre blanco como sobre amarillo/rojo. */
+.local-card__contract-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 4px 8px;
+  width: 100%;
+  border-radius: 8px;
+  background: #3f2d0b;
+  color: #ffd98a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .local-card--blanco {
   border-color: var(--color-border);
 }
